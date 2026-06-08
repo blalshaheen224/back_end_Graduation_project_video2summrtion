@@ -35,7 +35,6 @@ const startTranscription = async (audioUrl) => {
     {
       audio_url: audioUrl,
       speech_models: ["universal-3-pro", "universal-2"],
-      language_code: "en",
     },
     { headers }
   );
