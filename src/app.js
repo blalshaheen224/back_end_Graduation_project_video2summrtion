@@ -11,8 +11,20 @@ const cors  = require("cors")
 const app =express();
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));//express setup
-app.use(express.urlencoded({ extended: true }));
+const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    process.env.FRONTEND_URL_2,
+    process.env.FRONTEND_URL_3,
+    process.env.FRONTEND_URL_4,
+  ];
+
+  app.use(
+    cors({
+      origin: allowedOrigins,
+      credentials: true,
+    })
+
+  );app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
 app.use('/api/auth',authRoutes )
