@@ -6,11 +6,18 @@ const userRoutes =  require("./modules/users/user.routes")
 const uploadRouters = require('./modules/Transcription/Transcription.routes')
 const swaggerUi = require("swagger-ui-express");
 const { swaggerSpec } = require("./config/swagger.js")
-// const cors  = require("cors")
+ const cors  = require("cors")
 //express setup
 const app =express();
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*"
+  })
+);
+
 // const allowedOrigins = [
 //     process.env.FRONTEND_URL,
 //     process.env.FRONTEND_URL_2,
