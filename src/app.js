@@ -11,12 +11,12 @@ const { swaggerSpec } = require("./config/swagger.js")
 const app =express();
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
-const allowedOrigins = [
-    process.env.FRONTEND_URL,
-    process.env.FRONTEND_URL_2,
-    process.env.FRONTEND_URL_3,
-    process.env.FRONTEND_URL_4,
-  ];
+// const allowedOrigins = [
+//     process.env.FRONTEND_URL,
+//     process.env.FRONTEND_URL_2,
+//     process.env.FRONTEND_URL_3,
+//     process.env.FRONTEND_URL_4,
+//   ];
  // cors camcled
   // app.use(
   //   cors({
