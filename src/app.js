@@ -17,13 +17,13 @@ const allowedOrigins = [
     process.env.FRONTEND_URL_3,
     process.env.FRONTEND_URL_4,
   ];
-
+ // cors camcled
   // app.use(
   //   cors({
   //     origin: allowedOrigins,
   //     credentials: true,
-  //   })
-
+  //      })
+ 
   // );
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
